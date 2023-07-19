@@ -12,11 +12,11 @@ int main()
 {
     const char* file_path = "C:\\Users\\levi3\\Desktop\\david\\Koogle Search Engine\\url.txt";
     const char* url = "https://harrypotter.fandom.com/wiki/Main_Page";
-
+    int maxUrls = 5;
     UrlHandler * handler = UrlHandler::getInastance();
     handler->setUrlPath(url);
-    vector<string> *list = handler->getListOfLinks();
-    printVector(*list);
+    handler->createLinksMap(maxUrls);
 
     
 }
+

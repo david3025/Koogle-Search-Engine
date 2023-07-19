@@ -5,6 +5,7 @@
 #include "parserURLpage.h"
 #include <string>
 #include <vector>
+#include <unordered_map>
 class UrlHandler
 {
 public:
@@ -12,6 +13,7 @@ public:
 	~UrlHandler();
 	vector<string>* getListOfLinks();
 	void setUrlPath(const char* URL) { urlPath.assign(URL); }
+	void createLinksMap(int );
 private:
 	UrlHandler();
 	parserURLpage* parser;
@@ -20,6 +22,7 @@ private:
 	string urlPath;
 	string extractFirstWordAfterDoubleSlash(const string& url);
 	static  UrlHandler* instance;
+	unordered_map<string, vector<string>> MAP;
 };
 
 #endif // _UrlHandler_
